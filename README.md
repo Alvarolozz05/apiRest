@@ -1,59 +1,106 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# Tierra Media API REST
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+Esta es una API REST construida con **Laravel** que gestiona información del universo ficticio de la **Tierra Media**. Permite consultar y administrar **regiones, reinos, héroes, criaturas y artefactos**, así como las relaciones entre héroes y artefactos.
 
-## About Laravel
+---
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+## Estructura de la base de datos
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+**Tablas principales:**
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+- `regions`: almacena las regiones de la Tierra Media.  
+- `realms`: almacena los reinos y su información básica, incluyendo la relación con una región.  
+- `heroes`: almacena héroes, su raza, rango, reino y estado (vivo/muerto).  
+- `creatures`: almacena criaturas, su especie, nivel de amenaza y región.  
+- `artifacts`: almacena artefactos, su tipo, nivel de poder, descripción y reino de origen.  
 
-## Learning Laravel
+**Tablas pivote:**
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework. You can also check out [Laravel Learn](https://laravel.com/learn), where you will be guided through building a modern Laravel application.
+- `artifact_hero`: relación N:N entre héroes y artefactos.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+---
 
-## Laravel Sponsors
+## Migraciones y seeders
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+1. Ejecutar migraciones para crear todas las tablas:
 
-### Premium Partners
+```bash
+./vendor/bin/sail artisan migrate
+```
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+2. Cargar datos de pruebas con seeder
+```bash
+.vendor/bin/sail artisan db:seed
+```
+> Esto insertará datos iniciales de regiones, reinos, héroes, criaturas, artefactos y sus relaciones.
 
-## Contributing
+---
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+## Endpoints principales
 
-## Code of Conduct
+### Regiones (`regions`)
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+- `GET /api/regions` → Listar todas las regiones  
+- `GET /api/regions/{id}` → Obtener una región concreta  
+- `POST /api/regions` → Crear una región  
+- `PUT /api/regions/{id}` → Actualizar una región  
+- `DELETE /api/regions/{id}` → Eliminar una región  
 
-## Security Vulnerabilities
+### Reinos (`realms`)
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+- `GET /api/realms` → Listar todos los reinos  
+- `GET /api/realms/{id}` → Detalles de un reino (incluye región, héroes y artefactos)  
+- `POST /api/realms` → Crear un nuevo reino  
+- `PUT /api/realms/{id}` → Actualizar un reino  
+- `DELETE /api/realms/{id}` → Eliminar un reino  
 
-## License
+### Héroes (`heroes`)
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+- `GET /api/heroes` → Listar héroes  
+- `GET /api/heroes/{id}` → Detalles de un héroe (incluye reino y artefactos)  
+- `POST /api/heroes` → Crear un héroe  
+- `PUT /api/heroes/{id}` → Actualizar un héroe  
+- `DELETE /api/heroes/{id}` → Eliminar un héroe  
+
+### Criaturas (`creatures`)
+
+- `GET /api/creatures` → Listar criaturas  
+- `GET /api/creatures/{id}` → Detalles de una criatura (incluye región)  
+- `POST /api/creatures` → Crear una criatura  
+- `PUT /api/creatures/{id}` → Actualizar una criatura  
+- `DELETE /api/creatures/{id}` → Eliminar una criatura  
+
+### Artefactos (`artifacts`)
+
+- `GET /api/artifacts` → Listar artefactos  
+- `GET /api/artifacts/{id}` → Detalles de un artefacto (incluye reino y héroes que lo poseen)  
+- `POST /api/artifacts` → Crear un artefacto  
+- `PUT /api/artifacts/{id}` → Actualizar un artefacto  
+- `DELETE /api/artifacts/{id}` → Eliminar un artefacto  
+
+### Relación héroes ↔ artefactos (`artifact_hero`)
+
+- `POST /api/artifact-hero` → Asignar un artefacto a un héroe  
+- `DELETE /api/artifact-hero` → Retirar un artefacto de un héroe  
+- `GET /api/heroes/{id}/artifacts` → Listar artefactos de un héroe  
+- `GET /api/artifacts/{id}/heroes` → Listar héroes que poseen un artefacto  
+
+### Endpoints adicionales
+
+- `GET /api/heroes/alive` → Listar héroes vivos  
+- `GET /api/creatures/dangerous?level={n}` → Listar criaturas con nivel de amenaza ≥ `n`  
+- `GET /api/artifacts/top` → Listar artefactos con `power_level > 90`  
+
+---
+
+## Pruebas
+
+La API ha sido probada con **Postman**, con todos los tests pasando correctamente. Se incluye un archivo de exportación `.postman_test_run.json` con los resultados de la prueba.
+
+Para ejecutar pruebas manuales, se recomienda importar la colección de Postman y lanzar los requests sobre `http://localhost/api`.
+
+## Captura de Postman
+
+A continuación se muestra una captura de pantalla de Postman donde se pueden ver todos los tests ejecutados y aprobados para la API REST de la Tierra Media:
+
+![Captura de Postman mostrando todos los tests pasados](postman-test.png)
