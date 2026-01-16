@@ -1,0 +1,540 @@
+{
+	"id": "5167a3b5-93ec-4c84-843b-afed0659f337",
+	"name": "Tierra Media API REST - CRUD completo seguro",
+	"timestamp": "2026-01-16T12:10:59.807Z",
+	"collection_id": "49536211-b74c152f-61ee-4dcc-ac03-adeaa9fa7207",
+	"folder_id": 0,
+	"environment_id": "49536211-345e2a93-f9b6-45c4-bb89-e31eb7b460a8",
+	"totalPass": 11,
+	"delay": 0,
+	"persist": true,
+	"status": "finished",
+	"startedAt": "2026-01-16T12:10:45.304Z",
+	"totalFail": 0,
+	"results": [
+		{
+			"id": "c2c99e5f-dd7c-4fcc-b9fd-cf05a3ad5bce",
+			"name": "POST Region",
+			"url": "http://localhost/api/regions",
+			"time": 3998,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				3998
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "f5f4b401-af18-42f6-a82d-c6f3f30aa04c",
+			"name": "GET Region by ID",
+			"url": "http://localhost/api/regions/1",
+			"time": 837,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				837
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b055285c-f512-4406-9894-c6af1df5bfd8",
+			"name": "GET Regions",
+			"url": "http://localhost/api/regions",
+			"time": 217,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				217
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e3243573-4274-42a9-87c8-7283b1bb3d41",
+			"name": "POST Realm",
+			"url": "http://localhost/api/realms",
+			"time": 381,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				381
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "eaa767f8-8b3a-4c16-a34b-aeca55092899",
+			"name": "GET Realm by ID",
+			"url": "http://localhost/api/realms/1",
+			"time": 217,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Realm tiene id, name y alignment": true,
+				"Realm tiene region válida": true,
+				"Realm tiene heroes válidos": true
+			},
+			"testPassFailCounts": {
+				"Realm tiene id, name y alignment": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Realm tiene region válida": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Realm tiene heroes válidos": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				217
+			],
+			"allTests": [
+				{
+					"Realm tiene id, name y alignment": true,
+					"Realm tiene region válida": true,
+					"Realm tiene heroes válidos": true
+				}
+			]
+		},
+		{
+			"id": "ce353c98-a2cf-4901-9890-670b4f4c711c",
+			"name": "GET Realms",
+			"url": "http://localhost/api/realms",
+			"time": 85,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				85
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "daac94e4-2404-48f2-920f-591c963c63d9",
+			"name": "POST Hero",
+			"url": "http://localhost/api/heroes",
+			"time": 154,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				154
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "25ba3f4b-449e-4f9d-a935-76cf17b3deae",
+			"name": "GET Hero by ID",
+			"url": "http://localhost/api/heroes/1",
+			"time": 1755,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Hero tiene id y name": true,
+				"Hero tiene realm válido": true,
+				"Hero tiene artifacts válidos": true
+			},
+			"testPassFailCounts": {
+				"Hero tiene id y name": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Hero tiene realm válido": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Hero tiene artifacts válidos": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1755
+			],
+			"allTests": [
+				{
+					"Hero tiene id y name": true,
+					"Hero tiene realm válido": true,
+					"Hero tiene artifacts válidos": true
+				}
+			]
+		},
+		{
+			"id": "2b7119fd-a556-4f7a-908b-994ad868e901",
+			"name": "GET Heroes",
+			"url": "http://localhost/api/heroes",
+			"time": 102,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				102
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "b7eb1d81-b98b-443e-a0c0-8b9af093bda3",
+			"name": "POST Creature",
+			"url": "http://localhost/api/creatures",
+			"time": 165,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				165
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d5cd4cbd-9334-4bbb-a43c-5b1ee5d73948",
+			"name": "GET Creature by ID",
+			"url": "http://localhost/api/creatures/1",
+			"time": 202,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Creature tiene id, name, species y threat_level": true,
+				"Creature tiene region válida": true
+			},
+			"testPassFailCounts": {
+				"Creature tiene id, name, species y threat_level": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Creature tiene region válida": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				202
+			],
+			"allTests": [
+				{
+					"Creature tiene id, name, species y threat_level": true,
+					"Creature tiene region válida": true
+				}
+			]
+		},
+		{
+			"id": "ddce512a-4035-473e-a2e7-2389a01e44fd",
+			"name": "GET Creatures",
+			"url": "http://localhost/api/creatures",
+			"time": 81,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				81
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7ca4c935-0b99-42af-8e95-9f797f346640",
+			"name": "POST Artifact",
+			"url": "http://localhost/api/artifacts",
+			"time": 210,
+			"responseCode": {
+				"code": 201,
+				"name": "Created"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				210
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "e630bfee-ede6-4c40-beb7-a1eec3c0c766",
+			"name": "GET Artifact by ID",
+			"url": "http://localhost/api/artifacts/1",
+			"time": 1703,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {
+				"Artifact tiene id, name, type y power_level": true,
+				"Artifact tiene origin realm válido": true,
+				"Artifact tiene heroes válidos": true
+			},
+			"testPassFailCounts": {
+				"Artifact tiene id, name, type y power_level": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Artifact tiene origin realm válido": {
+					"pass": 1,
+					"fail": 0
+				},
+				"Artifact tiene heroes válidos": {
+					"pass": 1,
+					"fail": 0
+				}
+			},
+			"times": [
+				1703
+			],
+			"allTests": [
+				{
+					"Artifact tiene id, name, type y power_level": true,
+					"Artifact tiene origin realm válido": true,
+					"Artifact tiene heroes válidos": true
+				}
+			]
+		},
+		{
+			"id": "73129a03-9d9e-48e0-b1ce-3c5d75227af5",
+			"name": "GET Artifacts",
+			"url": "http://localhost/api/artifacts",
+			"time": 140,
+			"responseCode": {
+				"code": 200,
+				"name": "OK"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				140
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "58b6a2f6-6039-43f2-a698-47bb16076d9a",
+			"name": "DELETE Artifact",
+			"url": "http://localhost/api/artifacts/1",
+			"time": 166,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				166
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "7892e050-aae5-4ff8-917d-315dd9e191df",
+			"name": "DELETE Creature",
+			"url": "http://localhost/api/creatures/1",
+			"time": 114,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				114
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "56c75ea3-11ea-4dc1-84e4-2836d535362d",
+			"name": "DELETE Hero",
+			"url": "http://localhost/api/heroes/1",
+			"time": 136,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				136
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "9f810592-889e-471f-8148-4f49fbbf2dd9",
+			"name": "DELETE Realm",
+			"url": "http://localhost/api/realms/1",
+			"time": 179,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				179
+			],
+			"allTests": [
+				{}
+			]
+		},
+		{
+			"id": "d9f78ade-5eaf-4258-8dab-89d51fe1679d",
+			"name": "DELETE Region",
+			"url": "http://localhost/api/regions/1",
+			"time": 1807,
+			"responseCode": {
+				"code": 204,
+				"name": "No Content"
+			},
+			"tests": {},
+			"testPassFailCounts": {},
+			"times": [
+				1807
+			],
+			"allTests": [
+				{}
+			]
+		}
+	],
+	"count": 1,
+	"totalTime": 12649,
+	"collection": {
+		"requests": [
+			{
+				"id": "c2c99e5f-dd7c-4fcc-b9fd-cf05a3ad5bce",
+				"method": "POST"
+			},
+			{
+				"id": "f5f4b401-af18-42f6-a82d-c6f3f30aa04c",
+				"method": "GET"
+			},
+			{
+				"id": "b055285c-f512-4406-9894-c6af1df5bfd8",
+				"method": "GET"
+			},
+			{
+				"id": "e3243573-4274-42a9-87c8-7283b1bb3d41",
+				"method": "POST"
+			},
+			{
+				"id": "eaa767f8-8b3a-4c16-a34b-aeca55092899",
+				"method": "GET"
+			},
+			{
+				"id": "ce353c98-a2cf-4901-9890-670b4f4c711c",
+				"method": "GET"
+			},
+			{
+				"id": "daac94e4-2404-48f2-920f-591c963c63d9",
+				"method": "POST"
+			},
+			{
+				"id": "25ba3f4b-449e-4f9d-a935-76cf17b3deae",
+				"method": "GET"
+			},
+			{
+				"id": "2b7119fd-a556-4f7a-908b-994ad868e901",
+				"method": "GET"
+			},
+			{
+				"id": "b7eb1d81-b98b-443e-a0c0-8b9af093bda3",
+				"method": "POST"
+			},
+			{
+				"id": "d5cd4cbd-9334-4bbb-a43c-5b1ee5d73948",
+				"method": "GET"
+			},
+			{
+				"id": "ddce512a-4035-473e-a2e7-2389a01e44fd",
+				"method": "GET"
+			},
+			{
+				"id": "7ca4c935-0b99-42af-8e95-9f797f346640",
+				"method": "POST"
+			},
+			{
+				"id": "e630bfee-ede6-4c40-beb7-a1eec3c0c766",
+				"method": "GET"
+			},
+			{
+				"id": "73129a03-9d9e-48e0-b1ce-3c5d75227af5",
+				"method": "GET"
+			},
+			{
+				"id": "58b6a2f6-6039-43f2-a698-47bb16076d9a",
+				"method": "DELETE"
+			},
+			{
+				"id": "7892e050-aae5-4ff8-917d-315dd9e191df",
+				"method": "DELETE"
+			},
+			{
+				"id": "56c75ea3-11ea-4dc1-84e4-2836d535362d",
+				"method": "DELETE"
+			},
+			{
+				"id": "9f810592-889e-471f-8148-4f49fbbf2dd9",
+				"method": "DELETE"
+			},
+			{
+				"id": "d9f78ade-5eaf-4258-8dab-89d51fe1679d",
+				"method": "DELETE"
+			}
+		]
+	}
+}

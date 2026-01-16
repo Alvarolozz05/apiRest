@@ -8,13 +8,13 @@ class Hero extends Model
 {
     protected $fillable = ['name', 'race', 'rank', 'realm_id', 'alive'];
 
-    public function realm()
-    {
+    protected $casts = ['alive' => 'boolean'];
+
+    public function realm() {
         return $this->belongsTo(Realm::class);
     }
 
-    public function artifacts()
-    {
+    public function artifacts() {
         return $this->belongsToMany(Artifact::class);
     }
 }
