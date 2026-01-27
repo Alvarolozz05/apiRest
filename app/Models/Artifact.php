@@ -3,6 +3,8 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use App\Models\Realm;
+use App\Models\Hero;
 
 class Artifact extends Model {
     protected $fillable = ['name', 'type', 'origin_realm_id', 'power_level', 'description'];

@@ -29,6 +29,6 @@ class DatabaseSeeder extends Seeder
             ArtifactSeeder::class,
             CreatureSeeder::class,
             ArtifactHeroSeeder::class
-        ])
+        ]);
     }
 }

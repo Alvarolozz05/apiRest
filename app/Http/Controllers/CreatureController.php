@@ -31,6 +31,6 @@ class CreatureController extends Controller {
     }
 
     public function dangerous(Request $request) {
-        return Creature::where('danger_level', '>=', $request->level)->get();
+        return Creature::where('threat_level', '>=', $request->level)->get();
     }
 }
