@@ -104,11 +104,3 @@ Para ejecutar pruebas manuales, se recomienda importar la colección de Postman 
 La siguiente captura muestra la ejecución de los tests de la API REST de la Tierra Media usando la colección proporcionada por el profesor. Se puede observar que todos los tests se han completado **correctamente**, indicando que los endpoints funcionan según lo esperado:
 
 ![Captura de Postman mostrando todos los tests pasados](postman-test.png)
-
----
-
-## Captura de Postman – Colección propia
-
-La siguiente imagen corresponde a la ejecución de los tests utilizando mi propia colección personalizada. Todos los tests también se han completado **con éxito**, demostrando que la colección propia valida correctamente los endpoints y sus relaciones:
-
-![Captura de Postman mostrando todos los tests pasados de la colección propia](postman-coleccion-propia-test.png)
